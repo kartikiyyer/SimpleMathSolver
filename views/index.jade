@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 #{title}
+  h3 You can perform following operations:-
+  ul
+    li Check Prime Number
+      form(action="/check-prime", method="POST")
+        fieldset
+          label Enter number:&nbsp
+            input(name="number")
+          |&nbsp;
+          input(type="submit", value="Submit")          
+    li Find Prime Numbers
+      form(action="/find-prime", method="POST")
+        fieldset
+          label Enter number:&nbsp
+            input(name="number")
+          |&nbsp;
+          input(type="submit", value="Submit")
+  fieldset 
+    h3 Output:
+    b 
+      p #{error}
+      p #{output}
